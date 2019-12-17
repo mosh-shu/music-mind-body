@@ -94,13 +94,13 @@ l = [length(ymelody), length(ybase), length(ychord)];
 
 minl = min(l);
 
-ymelody = ymelody(1:l);
-ybase = ybase(1:l);
-ychord = ychord(1:l);
+ymelody = ymelody(1:minl);
+ybase = ybase(1:minl);
+ychord = ychord(1:minl);
 
 y = ymelody + ybase + ychord;
 
-sound(y/max(y), Fs);
+sound(y/(1.1*max(y)), Fs);
 
 % èÉâπçÏê¨ä÷êî
 function yw = createTone(a,f,d,rfd,Fs)
